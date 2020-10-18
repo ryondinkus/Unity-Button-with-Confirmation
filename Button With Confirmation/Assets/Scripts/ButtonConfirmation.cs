@@ -8,11 +8,11 @@ using UnityEngine.UI;
 //Event Handler of the Button Component should be left empty in favor of this one.
 public class ButtonConfirmation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
-    public GameObject ProgressBar;
+    public GameObject ProgressBar; //See CircularProgress prefab
     public Color Color1;
     public Color Color2;
-    public UnityEvent myUnityEvent; //This event handler should be used for onClick() instead of the Button Component
     public float seconds;
+    public UnityEvent myUnityEvent; //This event handler should be used for onClick() instead of the Button Component
 
     GameObject CurrentProgressBar;
     RadialProgress RadialProgressBar; //The RadialProgress.cs component of the instantiated ProgressBar
@@ -25,7 +25,7 @@ public class ButtonConfirmation : MonoBehaviour, IPointerDownHandler, IPointerUp
             {
                 CurrentProgressBar = Instantiate(ProgressBar, transform.position, transform.rotation, transform.parent);
                 RadialProgressBar = CurrentProgressBar.GetComponent<RadialProgress>();
-                RadialProgressBar.setEvent(myUnityEvent); //This takes the UnityEvent parameter and gives it to the RadialProgress component of the ProgressBar
+                RadialProgressBar.setEvent(myUnityEvent); //This takes the event, colors, and seconds params and gives it to the RadialProgress component of the ProgressBar
                 RadialProgressBar.setColor1(Color1);
                 RadialProgressBar.setColor2(Color2);
                 RadialProgressBar.setSeconds(seconds);
@@ -34,7 +34,7 @@ public class ButtonConfirmation : MonoBehaviour, IPointerDownHandler, IPointerUp
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData) //If button is released or pointer goes outside button, deplete ProgressBar
     {
         RadialProgressBar.isPressed = false;
     }
