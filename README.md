@@ -1,6 +1,8 @@
 # Unity Button with Confirmation
  A Unity asset for a button that activates after being held for a certain amount of time. Works in VR. This project comes with two example scenes, one for Desktop and one for VR, as well as the necessary ButtonConfirmation.cs and RadialProgress.cs scripts.
  
+![ButtonConfirmation.cs](https://i.imgur.com/HcR9YRL.gif)
+ 
 # How to Use
 ### 1. Setting up the actual progress bar.
 In the Prefabs folder, you'll notice there's a CircularProgressBar prefab. This is the icon that will appear over the button while it's being held down. While you can certainly make your own with relative ease, it might be a good idea to look at this prefab to get an idea of what exactly is needed.
