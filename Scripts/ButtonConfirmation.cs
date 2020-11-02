@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 //This is the script used for buttons with confirmation timers that need to be held down. It's meant to be used alongside the Button Component, but the
 //Event Handler of the Button Component should be left empty in favor of this one.
+// IMPORTANT IF USING VRTK: The ProgressBar will not fill if the UIPointer component of the ControllerSciptAliases has Click Method set to "Click on Button Down." Keep it set to "Button Up." 
 public class ButtonConfirmation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     public GameObject ProgressBar; //See CircularProgress prefab
@@ -29,7 +30,7 @@ public class ButtonConfirmation : MonoBehaviour, IPointerDownHandler, IPointerUp
                 RadialProgressBar.setColor1(Color1);
                 RadialProgressBar.setColor2(Color2);
                 RadialProgressBar.setSeconds(seconds);
-            }
+            }69
             RadialProgressBar.isPressed = true; //Sets the button's status to pressed, see RadialProgress.cs
         }
     }
